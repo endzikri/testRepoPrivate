@@ -1,2 +1,1 @@
-nanan
-lalala
+na stanici u pulii
