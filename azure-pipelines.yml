@@ -11,13 +11,20 @@ pr:
 
 pool: default
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    for i in {1..3}; do
-      echo "Still running... $i"
-      sleep 10
-    done
-  displayName: 'Simulate long-running task (5 minutes)'
+stages:
+- stage: stage1
+  jobs:
+  - job: Job1
+    steps:
+    - task: PowerShell@2
+      displayName: 'Sleep for 120 seconds'
+      inputs:
+        targetType: 'inline'
+        script: |
+          # PowerShell script to sleep for 120 seconds and print the seconds
+          $totalSeconds = 120
+          for ($i = 1; $i -le $totalSeconds; $i++) {
+              Write-Host "Sleeping for $i seconds..."
+              Start-Sleep -Seconds 1
+          }
+          Write-Host "Sleep completed!1"
