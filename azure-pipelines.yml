@@ -16,6 +16,8 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    for i in {1..3}; do
+      echo "Still running... $i"
+      sleep 10
+    done
+  displayName: 'Simulate long-running task (5 minutes)'
