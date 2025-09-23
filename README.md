@@ -1,1 +1,2 @@
 oprosti mi katrin
+mozda
